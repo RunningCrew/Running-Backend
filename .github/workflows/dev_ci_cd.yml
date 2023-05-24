@@ -3,7 +3,7 @@ name: dev CI/CD
 on:
   push:
     branches:
-      - master
+      - dev
 
 env:
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
