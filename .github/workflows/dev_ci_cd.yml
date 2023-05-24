@@ -6,7 +6,7 @@ on:
       - dev
 
 env:
-  env_var: ${{ secrets.ENV_CONTEXT_VAR }}
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
   spring_boot_build:
@@ -17,9 +17,9 @@ jobs:
     needs: spring_boot_build
     uses: ./.github/workflows/deploy_beanstalk.yml
     with:
-      environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }}
-      application_name: ${{ secrets.EB_APPLICATION_NAME }}
-      region: ${{ secrets.AWS_REGION }}
+      environment_name: ${{ vars.EB_ENVIRONMENT_NAME }}
+      application_name: ${{ vars.EB_APPLICATION_NAME }}
+      region: ${{ vars.AWS_REGION }}
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
