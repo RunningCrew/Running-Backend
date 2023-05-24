@@ -1,0 +1,25 @@
+name: dev CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
+jobs:
+  spring_boot_build:
+    name: spring boot build
+    uses: ./.github/workflows/spring_boot_build.yml
+
+  deply_beanstalk:
+    needs: spring_boot_build
+    uses: ./.github/workflows/deploy_beanstalk.yml
+    with:
+      environment_name: ${{ vars.EB_ENVIRONMENT_NAME }}
+      application_name: ${{ vars.EB_APPLICATION_NAME }}
+      region: ${{ vars.AWS_REGION }}
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
