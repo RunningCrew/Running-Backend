@@ -1,16 +1,16 @@
-//package com.running.crew.config;
+// package com.running.crew.config;
 //
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.security.core.annotation.AuthenticationPrincipal;
-//import org.springframework.security.core.context.SecurityContext;
-//import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.security.core.annotation.AuthenticationPrincipal;
+// import org.springframework.security.core.context.SecurityContext;
+// import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //
-//import java.util.*;
+// import java.util.*;
 //
-//@Configuration
-//@EnableWebMvc
-//public class SwaggerConfig {
+// @Configuration
+// @EnableWebMvc
+// public class SwaggerConfig {
 //
 //    private ApiInfo swaggerInfo() {
 //        return new ApiInfoBuilder()
@@ -63,5 +63,5 @@
 //        produces.add("application/json;charset=UTF-8");
 //        return produces;
 //    }
-//}
-////swagger: http://localhost:8000/swagger-ui/index.html
+// }
+//// swagger: http://localhost:8000/swagger-ui/index.html

@@ -1,10 +1,10 @@
 package com.running.crew.exception;
 
+
 import com.running.crew.constant.ErrorCode;
 import lombok.Getter;
 
-/** Status: 400
- * Bad Request Error 반환하는 커스텀 클래스입니다 */
+/** Status: 400 Bad Request Error 반환하는 커스텀 클래스입니다 */
 @Getter
 public class BadRequestException extends BusinessException {
     private String message;

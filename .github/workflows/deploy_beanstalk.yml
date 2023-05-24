@@ -1,0 +1,49 @@
+name: Deploy Beanstalk
+
+on:
+  workflow_call:
+    inputs:
+      environment_name:
+        required: true
+        type: string
+      application_name:
+        required: true
+        type: string
+      region:
+        required: true
+        type: string
+    secrets:
+      aws_access_key_id:
+        required: true
+      aws_secret_access_key:
+        required: true
+
+jobs:
+  deploy:
+    name: deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get current time
+        uses: 1466587594/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYYMMDD_HH:mm:ss
+          utcOffset: "+09:00"
+
+      - name: Checkout commits
+        uses: actions/checkout@v3
+
+      - name: Generate deployment package
+        run: zip -r deploy_${{ steps.current-time.outputs.formattedTime }}.zip . -x '*.git*'
+
+      - name: Beanstalk Deploy
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.aws_access_key_id }}
+          aws_secret_key: ${{ secrets.aws_secret_access_key }}
+          environment_name: ${{ inputs.environment_name }}
+          application_name: ${{ inputs.application_name }}
+          region: ${{ inputs.region }}
+          version_label: ${{ steps.current-time.outputs.formattedTime }}
+          deployment_package: deploy_${{ steps.current-time.outputs.formattedTime }}.zip

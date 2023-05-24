@@ -1,4 +1,3 @@
 package com.running.crew.service;
 
-public class AuthService {
-}
+public class AuthService {}
