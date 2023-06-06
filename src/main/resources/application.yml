@@ -29,6 +29,9 @@ logging:
     org.springframework.transaction: DEBUG
 ---
 spring:
+  config:
+    activate:
+      on-profile: test
   jpa:
     show-sql: true
     hibernate:
