@@ -1,7 +1,7 @@
 package com.running.crew.domain.letter;
 
 
-import com.running.crew.domain.User;
+import com.running.crew.domain.user.User;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
