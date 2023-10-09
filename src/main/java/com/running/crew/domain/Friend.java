@@ -1,6 +1,7 @@
 package com.running.crew.domain;
 
 
+import com.running.crew.domain.user.User;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

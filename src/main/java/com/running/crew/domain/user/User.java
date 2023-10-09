@@ -1,6 +1,7 @@
-package com.running.crew.domain;
+package com.running.crew.domain.user;
 
 
+import com.running.crew.domain.Friend;
 import com.running.crew.domain.letter.Letter;
 import com.running.crew.domain.running.Record;
 import java.util.List;
@@ -13,15 +14,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "user")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {

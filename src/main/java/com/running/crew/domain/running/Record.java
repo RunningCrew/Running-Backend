@@ -1,7 +1,7 @@
 package com.running.crew.domain.running;
 
 
-import com.running.crew.domain.User;
+import com.running.crew.domain.user.User;
 import java.time.LocalTime;
 import java.util.List;
 import javax.persistence.CascadeType;
