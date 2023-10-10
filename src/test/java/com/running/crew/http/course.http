@@ -1,0 +1,2 @@
+GET http://localhost:8080/course/recommend?location=마포
+Content-Type: application/json
