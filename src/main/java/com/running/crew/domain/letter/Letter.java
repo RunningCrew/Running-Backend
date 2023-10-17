@@ -3,10 +3,7 @@ package com.running.crew.domain.letter;
 
 import com.running.crew.domain.user.User;
 import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * User 사이의 쪽지를 나타내는 테이블입니다.
@@ -17,6 +14,7 @@ import lombok.Setter;
 @Table(name = "letter")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Letter {
